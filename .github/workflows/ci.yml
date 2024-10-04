@@ -26,10 +26,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Build Docker Image
-        run: docker build -t bhanuu1903/todo-app1:latest .
+        run: docker build -t bhanuu1903/todo-app:latest .
 
       - name: Log in to Docker Hub
         run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
 
       - name: Push to Docker Hub
-        run: docker push bhanuu1903/todo-app1:latest
+        run: docker push bhanuu1903/todo-app:latest
